@@ -1,0 +1,39 @@
+{
+  "name": "win32api",
+  "version": "0.0.1",
+  "description": "Asynchronous, non-blocking win32api bindings",
+  "homepage": "https://github.com/idobatter/node-win32api",
+  "author": {
+    "name": "idobatter",
+    "url": "https://github.com/idobatter",
+    "email": "idobatter@gmail.com"
+  },
+  "contributors": [
+    "idobatter <idobatter@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/idobatter/node-win32api.git"
+  },
+  "dependencies": {
+    "assert": ">= 0.4.9",
+    "async": ">= 0.1.22",
+    "ref-struct": ">= 0.0.5",
+    "ref": ">= 0.1.3"
+  },
+  "devDependencies": {
+    "mocha": ">= 1.8.1",
+    "assert": ">= 0.4.9",
+    "async": ">= 0.1.22",
+    "ref-struct": ">= 0.0.5",
+    "ref": ">= 0.1.3"
+  },
+  "engines": {
+    "node": ">= 0.8.18 && < 0.9.0"
+  },
+  "scripts": {
+    "test": "nmake /a test"
+  },
+  "licenses": [{ "type": "BSD" }],
+  "main": "./lib/win32api"
+}
