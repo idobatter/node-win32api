@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>node-win32api by idobatter</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>node-win32api</h1>
+        <h2>Asynchronous, non-blocking win32api bindings for node.js .</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/idobatter/node-win32api/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/idobatter/node-win32api/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/idobatter/node-win32api" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>NAME</h1>
+
+<p>node-win32api - Asynchronous, non-blocking win32api bindings for <a href="https://github.com/joyent/node">node.js</a> .</p>
+
+<h1>USAGE</h1>
+
+<p>Install with <code>npm install win32api</code>.</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">win32con</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'win32con'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">win32api</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'win32api'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">MessageBoxA</span> <span class="o">=</span> <span class="nx">win32api</span><span class="p">.</span><span class="k">new</span><span class="p">(</span><span class="s1">'user32'</span><span class="p">,</span> <span class="s1">'MessageBoxA'</span><span class="p">,</span> <span class="s1">'LPPL'</span><span class="p">,</span> <span class="s1">'L'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">MessageBoxA</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">win32api</span><span class="p">.</span><span class="nx">hWnd</span><span class="p">,</span> <span class="s1">'Hello, Win32API'</span><span class="p">,</span> <span class="s1">'test message'</span><span class="p">,</span>
+  <span class="nx">win32con</span><span class="p">.</span><span class="nx">MB_ICONINFORMATION</span> <span class="o">|</span> <span class="nx">win32con</span><span class="p">.</span><span class="nx">MB_OK</span><span class="p">);</span>
+<span class="nx">win32api</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">MessageBoxW</span> <span class="o">=</span> <span class="nx">win32api</span><span class="p">.</span><span class="k">new</span><span class="p">(</span><span class="s1">'user32'</span><span class="p">,</span> <span class="s1">'MessageBoxW'</span><span class="p">,</span> <span class="s1">'LPPL'</span><span class="p">,</span> <span class="s1">'L'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">MessageBoxW</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">win32api</span><span class="p">.</span><span class="nx">hWnd</span><span class="p">,</span> <span class="s1">'from utf8string'</span><span class="p">,</span> <span class="s1">'auto convert'</span><span class="p">,</span>
+  <span class="nx">win32con</span><span class="p">.</span><span class="nx">MB_ICONINFORMATION</span> <span class="o">|</span> <span class="nx">win32con</span><span class="p">.</span><span class="nx">MB_OK</span><span class="p">);</span>
+<span class="nx">win32api</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</pre></div>
+
+<h1>FEATURES</h1>
+
+<ul>
+<li>So much implements.</li>
+<li>Implement accessors getter, setter and caller.</li>
+<li>npm</li>
+</ul><h1>API</h1>
+
+<p>See the <a href="https://github.com/idobatter/node-win32api/wiki">API documentation</a> in the wiki.</p>
+
+<h1>BUILDING</h1>
+
+<p>This project uses VC++ 2008 Express (or later) and Python 2.6 (or later) .
+(When using Python 2.5, it needs <a href="http://pypi.python.org/pypi/multiprocessing/">multiprocessing 2.5 back port</a> .)</p>
+
+<p>Bulding also requires node-gyp to be installed. You can do this with npm:</p>
+
+<pre><code>npm install -g node-gyp
+</code></pre>
+
+<p>To obtain and build the bindings:</p>
+
+<pre><code>git clone git://github.com/idobatter/node-win32api.git
+cd node-win32api
+node-gyp configure
+node-gyp build
+</code></pre>
+
+<p>You can also use <a href="https://github.com/isaacs/npm"><code>npm</code></a> to download and install them:</p>
+
+<pre><code>npm install win32api
+</code></pre>
+
+<h1>TESTS</h1>
+
+<p><a href="https://github.com/visionmedia/mocha">mocha</a> is required to run unit tests.</p>
+
+<pre><code>npm install -g mocha
+nmake /a test
+</code></pre>
+
+<h1>CONTRIBUTORS</h1>
+
+<ul>
+<li><a href="https://github.com/idobatter">idobatter</a></li>
+</ul><h1>ACKNOWLEDGEMENTS</h1>
+
+<p>Inspired <a href="http://www.ruby-doc.org/stdlib/libdoc/win32api/rdoc/">WIN32API</a></p>
+
+<h1>LICENSE</h1>
+
+<p><code>node-win32api</code> is <a href="https://github.com/idobatter/node-win32api/raw/master/LICENSE">BSD licensed</a>.</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
